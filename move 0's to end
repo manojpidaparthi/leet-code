@@ -1,0 +1,29 @@
+class Solution {
+    public void moveZeroes(int[] nums) {
+        int m=nums.length;
+        int pos=0;
+        for(int i=0;i<m;i++){
+        if(nums[i]!=0){
+            nums[pos]=nums[i];
+            pos++;
+        }
+    }
+    while(pos<m)
+    {
+        nums[pos]=0;
+        pos++;
+    }
+}
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int nums[]=new int[n];
+        for(int i=0;i<n;i++)
+        {
+            nums[i]=sc.nextInt();
+        }
+        Solution sol=new Solution();
+        sol.moveZeroes(nums);
+        System.out.print(Arrays.toString(nums));
+    }
+}
