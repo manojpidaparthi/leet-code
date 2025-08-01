@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+class Solution {
+    public int[] plusOne(int[] digits) {
+        int n = digits.length;
+
+        // Step 1: Start from the end and add 1
+        for (int i = n - 1; i >= 0; i--) {
+            if (digits[i] < 9) {
+                digits[i]++;    // Just add 1 and return if no carry over
+                return digits;
+            }
+            digits[i] = 0;       // Set to 0 if digit was 9 (carry over)
+        }
+
+        // Step 2: If all digits were 9, create a new array with extra length
+        int[] result = new int[n + 1];
+        result[0] = 1;  // Example: 999 + 1 = 1000 → result[0] = 1, rest all zeros
+
+        return result;
+    }
+
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        int digits[] = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            digits[i] = sc.nextInt();
+        }
+
+        Solution sol = new Solution();
+        int[] result = sol.plusOne(digits);
+
+        // Correct way to print the array:
+        for (int i = 0; i < result.length; i++) {
+            System.out.print(result[i]);
+        }
+    }
+}
