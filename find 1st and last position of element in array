@@ -1,0 +1,30 @@
+class Solution {
+    public int[] searchRange(int[] nums, int target) {
+        int m=nums.length;
+        int start=-1,end=-1;
+
+        for(int i=0;i<m;i++){
+            if(nums[i]==target){
+                if(start==-1){
+                    start=i;
+                }     
+                end=i;           
+            }
+            
+        }
+        return new int[]{start,end};
+    }
+    public static void main(String args[]){
+        Scanner sc=new Scanner (System.in);
+        int target=sc.nextInt();
+        int n=sc.nextInt();
+        int nums[]=new int[n];
+        for(int i=0;i<n;i++){
+            nums[i]=sc.nextInt();
+
+        }
+        Solution sol=new Solution();
+        int result[]=sol.searchRange(nums,target);
+        System.out.print(result);
+    }
+}
