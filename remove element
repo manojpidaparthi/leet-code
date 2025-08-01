@@ -1,0 +1,29 @@
+class Solution {
+    public int removeElement(int[] nums, int val) {
+        int n=nums.length;
+        int i=0;
+        for(int j=0;j<n;j++)
+        {
+            if(nums[j]!=val){
+                nums[i]=nums[j];
+                i++;
+            }
+        }
+        return i;
+    }
+    public static void main(String args[]){
+
+    Scanner sc=new Scanner(System.in);
+    int i=sc.nextInt();
+    int j=sc.nextInt();
+    int val=sc.nextInt();
+    int n=sc.nextInt();
+    int nums[]=new int[n];
+    Solution sol=new Solution();
+    int numslength=sol.removeElement(nums,val);
+    for( i=0;i<numslength;i++)
+    {
+        System.out.println(nums[i]+" ");
+    }
+}
+}
