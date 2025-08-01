@@ -1,0 +1,12 @@
+class Solution {
+    public int mySqrt(int x) {
+        return (int)Math.floor(Math.sqrt(x));
+    }
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        int x=sc.nextInt();
+        Solution sol=new Solution();
+        int result=sol.mySqrt(x);
+        System.out.print(result);
+    }
+}
